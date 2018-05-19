@@ -13,7 +13,7 @@ Pure Dashboard is a web application to filter and follow the pull requests of in
 - [Clone the repository](https://github.com/carrmelo/pr-dashboard-client.git) with ``git clone <repository url>``
 - Install the dependencies ``yarn install`` or ``npm install``
 - Create a ``.env.develoment`` file in the root folder with the required keys. You can find an example in ``.env.development.example``.
-- To be able to use all the functionality of the application you need to clone and run the [PuRe Dashboard server repository](https://github.com/g0g11/pr-dashboard-client)
+- To be able to use all the functionality of the application you need to clone and run the [PuRe Dashboard server repository](https://github.com/g0g11/pr-dashboard-server)
 
 ## API
 
