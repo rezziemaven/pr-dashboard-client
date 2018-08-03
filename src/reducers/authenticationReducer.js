@@ -28,12 +28,15 @@ export default (state = initialState, action) => {
       
       case 'GET_USER_INFO_REQUEST':
       case 'GET_USER_INFO_FAILURE':
-      case 'LOGIN_USER_REQUEST':
-      case 'LOGIN_USER_FAILURE':
-        return {
-          ...state
-        }
 
+      
+      case 'LOGIN_USER_REQUEST':
+        console.log("USER LOGIN REQUESTED")
+        return state
+      case 'LOGIN_USER_FAILURE':
+        console.log("USER_LOG_IN_FAILURE")
+        return state
+        
       case 'LOGOUT_USER':
         return initialState
 
@@ -41,3 +44,7 @@ export default (state = initialState, action) => {
         return state;
     }
 }
+
+
+
+

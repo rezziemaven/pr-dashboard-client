@@ -12,6 +12,7 @@ class Welcome extends Component {
     if (!this.props.isAuth){
       const code = this.props.location.search
       this.props.loginUser(code)
+      console.log(code)
     } else if (!this.props.user) {
       this.props.getUserInfo()
       this.props.history.push('/repos')

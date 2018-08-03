@@ -25,9 +25,8 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(
   reducer,
   persistedState,
-  composeEnhancers(applyMiddleware(reduxthunk, api, socket(process.env.REACT_APP_SERVER_URL)))
+  composeEnhancers(applyMiddleware(reduxthunk, api, socket('http://localhost:5000')))
 )
-
 // Listen to the changes on the state
 // and saves them, no more than one time per second
 store.subscribe(throttle(() => {
