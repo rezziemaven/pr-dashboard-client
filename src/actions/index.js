@@ -14,13 +14,13 @@ import {
 import axios from 'axios'
 import { authHeader } from '../helpers/auth-header'
 
-const BASE_API_URL = `http://localhost:5000/v1/user/me`
+const BASE_API_URL = `${process.env.REACT_APP_SERVER_URL}${process.env.REACT_APP_API_VERSION}/user/me`
 
 
 export const getRepositories = () => ({
   type: REPOS_GET,
   [CALL_API]: {
-    endpoint: `http://localhost:5000/v1/user/me/repos`,
+    endpoint: `${BASE_API_URL}/repos`,
     schema: Schemas.REPOS
   }
 })
@@ -28,7 +28,7 @@ export const getRepositories = () => ({
 export const getPullRequests = () => ({
   type: PULLS_GET,
   [CALL_API]: {
-    endpoint: `http://localhost:5000/v1/user/me/pullrequests`,
+    endpoint: `${BASE_API_URL}/pullrequests`,
     schema: Schemas.PULLS,
   }
 })
@@ -62,7 +62,7 @@ export const setPullsFromSocket = (pulls) => ({
 export const toggleRepository = (id, action) => ({
   type: 'TOGGLE_WEBHOOK',
   [CALL_API]: {
-    endpoint: `http://localhost:5000/v1/user/me/repos/${id}/${action}`,
+    endpoint: `${BASE_API_URL}/repos/${id}/${action}`,
     method: 'PATCH'
   }
 })
