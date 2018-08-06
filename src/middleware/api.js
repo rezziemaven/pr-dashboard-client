@@ -76,6 +76,8 @@ export default store => next => action => {
 
   const { schema, endpoint, method, body } = callAPI
 
+  console.log(schema, endpoint, method, body)
+
   next({
     ...action,
     type: action.type + '_REQUEST'
@@ -84,6 +86,8 @@ export default store => next => action => {
   const state = store.getState();
   const token = state.authentication.token;
 
+  console.log(state, token)
+
   const headers = token 
     ? {
       'Authorization': `JWT ${token}`
@@ -91,13 +95,18 @@ export default store => next => action => {
     : {};
   
   return callApi(endpoint, schema, method, headers, body).then(
-    response => store.dispatch(actionWith({
+    response => {
+      console.log("REPONSE", response)
+      store.dispatch(actionWith({
       type: action.type + '_SUCCESS',
       response
-    })),
+    }))
+  },
     error => store.dispatch(actionWith({
       type: action.type + '_FAILURE',
       error: error || 'Something bad happened'
     }))
   )
 }
+
+

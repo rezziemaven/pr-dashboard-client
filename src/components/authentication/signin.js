@@ -36,7 +36,6 @@ class SignIn extends Component {
                 </g>
               </g>
             </svg>
-
             <a href={`${process.env.REACT_APP_SERVER_URL}${process.env.REACT_APP_API_VERSION}/auth/github`} className="github-button">
               <GithubLoginButton />
             </a>  
@@ -53,3 +52,5 @@ const mapStateToProps = ({ authentication }) => ({
 })
 
 export default connect(mapStateToProps)(SignIn)
+
+

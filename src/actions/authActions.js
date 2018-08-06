@@ -4,6 +4,7 @@ export const getUserInfo = () => ({
   type: 'GET_USER_INFO',
   [CALL_API]: {
     endpoint: `${process.env.REACT_APP_SERVER_URL}${process.env.REACT_APP_API_VERSION}/user/me`,
+
   }
 })
 
@@ -17,3 +18,6 @@ export const loginUser = (code) => ({
 export const logoutUser = () => ({
   type: 'LOGOUT_USER'
 })
+
+
+

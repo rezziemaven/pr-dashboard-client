@@ -27,7 +27,6 @@ const store = createStore(
   persistedState,
   composeEnhancers(applyMiddleware(reduxthunk, api, socket(process.env.REACT_APP_SERVER_URL)))
 )
-
 // Listen to the changes on the state
 // and saves them, no more than one time per second
 store.subscribe(throttle(() => {
